@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blueColor{
+            color :brown
+        }
+    </style>
+</head>
+<body>
+    <div id='root'></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type ='text/babel'>
+        function dateFormatter(){
+            let time = new Date();
+            return time.toLocaleDateString();
+        }
+        function formatName(user){
+            return user.firstname + ' '+user.lastname;
+        }
+        function Hello(){
+            let profile = {firstname : "Yash ", lastname: "----"};
+            let imageURL ="data:image/jpeg;base64,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";
+
+            return (<div>
+                <img src = {imageURL} width="200" height="200"></img>
+                <h2>Hello! {formatName(profile)}</h2>
+                <h3>Today date: {dateFormatter()}</h3>
+                </div>);
+        }
+        function App(){
+            return (<div>
+                <h1 className='blueColor'> Welcome to named component</h1>
+                <Hello />
+                </div>)
+        }
+        ReactDOM.render(<App></App>, document.getElementById('root'));
+    </script>
+</body>
+</html>
